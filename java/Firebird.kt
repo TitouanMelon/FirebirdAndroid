@@ -62,7 +62,7 @@ class Firebird(baseContext : ContextWrapper) {
         FirebirdConf.extractAssets(baseContext, false)
         FirebirdConf.setEnv(baseContext)
         // Used to load the 'firebirdandroidcpp' library on application startup.
-        System.loadLibrary("firebirdandroidcpp")
+        System.loadLibrary("ProjectName")
         initAPI()
     }
 
