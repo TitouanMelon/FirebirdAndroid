@@ -17,7 +17,7 @@ first go inside **assets/firebird_ARCHITECTURE** corresponding at your os archit
 # INSTALL
 First create a new project, pour le reste de cette explication le nom de projet en minuscules sera appele YourProjectName
 
-When your project is load you need to add C++ in your application :
+When your project is load you need to add C++ in your application (you can remove the .cpp file created by default if you just want use the api) :
 
 PHOTO AND EXPLICATION
 
