@@ -1,28 +1,36 @@
 # FirebirdAndroid
 
-First create a new project, pour le reste de cette explication le nom de projet en minuscules sera appele ProjectName
+# INSTALL
+First create a new project, pour le reste de cette explication le nom de projet en minuscules sera appele YourProjectName
 
 When your project is load you need to add C++ in your application :
 
 PHOTO AND EXPLICATION
 
-# Move file in your project
+## Move file in your project
 
-move all files and folders of the cpp folders inside your cpp folder wich can be found under <YourAndroidApplicationFolder>/app/src/main/
-move kotlin file inside the java folder inside your java folder wich can be found under <YourAndroidApplicationFolder>/app/src/main/java/com/example/<ProjectName>/
+Move all files and folders of the cpp folders inside your cpp folder wich can be found under **YourAndroidApplicationFolder/app/src/main/**
 
-# Edit files
+Move Firebird.kt file inside the java folder of your application wich can be found under **YourAndroidApplicationFolder/app/src/main/java/com/example/YourProjectName/**
 
-## CMAKEList.txt
+Move .aar file inside the libs folder of your application wich can be found under **YourAndroidApplicationFolder/app/libs/**
 
-In add_library session add at the end before the ) :
+After that your project must contains the files like this :
+
+PHOTO OF FOLDER'S TREE
+
+## Edit files
+
+### CMAKEList.txt
+
+In **add_library()** add at the end before the **)** :
 
 ```
 firebirdCore.cpp
-request.cpp file
+request.cpp
 ```
 
-Under find_library session add this and replace <ProjectName> by your ProjectName :
+Under **find_library()** add this and replace ProjectName by your YourProjectName :
 
 ```
 target_include_directories(
@@ -30,16 +38,34 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 ```
 
-## firebirdCore.cpp
+### firebirdCore.cpp
 
-In this file change the name of JNIEXPORT function by replacing PROJETNAME by your ProjectName
+In this file change the name of JNIEXPORT function by replacing PROJECTNAME by your YourProjectName (there are 5 functions)
 
-## Kotlin files
-First of all at the end of the first line of each file add your ProjectName after the .
+```
+//For project name firedroid
+extern "C" JNIEXPORT jint JNICALL Java_com_example_PROJECTNAME_Firebird_getApiVersion(JNIEnv* env, jobject self)
+//become
+extern "C" JNIEXPORT jint JNICALL Java_com_example_firedroid_Firebird_getApiVersion(JNIEnv* env, jobject self)
+```
 
-Then in Firebird.kt in init function add your lib name in System.loadLibrary(name>)
+### Kotlin files
+First of all at the end of the first line of each file add your YourProjectName after the .
 
-in manifest add before application
+Then in Firebird.kt in init function update your YourProjectName in System.loadLibrary("ProjectName")
+
+```
+//For project name firedroid
+package com.example.firedroid
+and
+System.loadLibrary("ProjectName")
+//become
+System.loadLibrary("firedroid")
+```
+
+### AndroidManifest.xml
+
+Before application tag insert this :
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />
@@ -49,7 +75,24 @@ in manifest add before application
 <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 ```
 
-in application add activity
+### build.gradle of app
+
+found the line with cppFlags and add after '-std=c++17'
+the line looks like this after change
+```
+cppFlags '-std=c++17'
+```
+in dependencies add the aar file by add this line inside brackets :
+
+```
+implementation files('libs/Firebird-3.0.0-android-embedded.aar')
+```
+
+# ADD DEBUG INTERFACE
+
+## Add jetpack compose
+
+Then in application tag add activity :
 
 ```
 <activity
@@ -63,13 +106,7 @@ in application add activity
 </activity>
 ```
 
-add .arr in app/libs and add <implementation files('libs/Name_of_aar')> then sync
-add -std=c++17 in cppFlags
-
-
-
-
-for jetpack add this in graddle
+Inside the android brackets add this
 
 ```
 buildFeatures {
@@ -78,7 +115,10 @@ buildFeatures {
     composeOptions {
         kotlinCompilerExtensionVersion '1.4.6'
     }
+```
+Inside the dependencies brackets add this
 
+```
 implementation 'androidx.activity:activity-compose:1.7.2'
     implementation "androidx.compose.animation:animation:1.4.3"
     implementation "androidx.compose.foundation:foundation:1.4.3"
@@ -86,3 +126,7 @@ implementation 'androidx.activity:activity-compose:1.7.2'
     implementation "androidx.compose.runtime:runtime:1.4.3"
     implementation "androidx.compose.ui:ui:1.4.3"
 ```
+
+# Use the API with your application
+## ADD to your java file
+## Add to your cpp file
