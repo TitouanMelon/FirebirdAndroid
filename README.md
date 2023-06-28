@@ -31,7 +31,7 @@ Move .aar file inside the libs folder of your application wich can be found unde
 
 After that your project must contains the files like this :
 
-PHOTO OF FOLDER'S TREE
+![tree](./Img/tree.png)
 
 ## Edit files
 
