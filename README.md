@@ -2,10 +2,17 @@
 
 # Insert your database/UDF/UDR
 
-open the .aar and put :
-database -> /databaase
-udf -> udf/
-udr -> udr/
+**System libs**
+Put your system libs inside the folder corresponding to the architecture of the libs inside the **jni** folder
+
+**Database**
+Put your .fdb files inside the **assets/databases/**
+
+**UDF**
+first go inside **assets/firebird_ARCHITECTURE** corresponding at your os architecture then go to **UDF** folders and put the .so libs inside
+
+**UDR**
+first go inside **assets/firebird_ARCHITECTURE** corresponding at your os architecture then go to **plugins/udr** folders and put the .so libs inside
 
 # INSTALL
 First create a new project, pour le reste de cette explication le nom de projet en minuscules sera appele YourProjectName
