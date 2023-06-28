@@ -28,7 +28,7 @@ PHOTO OF FOLDER'S TREE
 
 ## Edit files
 
-### CMAKEList.txt
+**CMAKEList.txt**
 
 In **add_library()** add at the end before the **)** :
 
@@ -45,7 +45,7 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 ```
 
-### firebirdCore.cpp
+**firebirdCore.cpp**
 
 In this file change the name of JNIEXPORT function by replacing PROJECTNAME by your YourProjectName (there are 5 functions)
 
@@ -56,7 +56,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_example_PROJECTNAME_Firebird_getApiVe
 extern "C" JNIEXPORT jint JNICALL Java_com_example_firedroid_Firebird_getApiVersion(JNIEnv* env, jobject self)
 ```
 
-### Firebird.kt
+**Firebird.kt**
 First of all at the end of the first line add your YourProjectName after the .
 
 Then in init function update your YourProjectName in System.loadLibrary("ProjectName")
@@ -70,7 +70,7 @@ System.loadLibrary("ProjectName")
 System.loadLibrary("firedroid")
 ```
 
-### AndroidManifest.xml
+**AndroidManifest.xml**
 
 Before application tag insert this :
 
@@ -82,7 +82,7 @@ Before application tag insert this :
 <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 ```
 
-### build.gradle of app
+**build.gradle of app**
 
 found the line with cppFlags and add after '-std=c++17'
 the line looks like this after change
@@ -96,8 +96,6 @@ implementation files('libs/Firebird-3.0.0-android-embedded.aar')
 ```
 
 # ADD DEBUG INTERFACE
-
-## Add jetpack compose
 
 **Add kotlin file**
 
