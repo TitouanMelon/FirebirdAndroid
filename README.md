@@ -22,8 +22,11 @@ When your project is load you need to add C++ in your application (you can remov
 * right-click on app
 * click on add C++ to module
 * click on ok on the new windows wich open
+* if success you will have project tree like this
 
-![tree](./Img/C++.png)
+![addC](./Img/C++.png)
+![Cpp](./Img/cppFolder.png)
+
   
 ## Move file in your project
 
