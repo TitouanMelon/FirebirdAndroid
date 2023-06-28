@@ -19,8 +19,12 @@ First create a new project, pour le reste de cette explication le nom de projet 
 
 When your project is load you need to add C++ in your application (you can remove the .cpp file created by default if you just want use the api) :
 
-PHOTO AND EXPLICATION
+* right-click on app
+* click on add C++ to module
+* click on ok on the new windows wich open
 
+![tree](./Img/C++.png)
+  
 ## Move file in your project
 
 Move all files and folders of the cpp folders inside your cpp folder wich can be found under **YourAndroidApplicationFolder/app/src/main/**
