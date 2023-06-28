@@ -162,9 +162,9 @@ implementation 'androidx.activity:activity-compose:1.7.2'
 To use the api inside your java file you need to create a variable wich represent the class Firebird
 
 To construct this class you need 
-* a Context to be use to found the user's directory
-* a the database name
-* the username
-* the user's password
+* A ContextWrapper class to be use to found the user's directory
+* The database name
+* The username
+* The user's password
 
 **Add to your cpp file**
