@@ -1,5 +1,12 @@
 # FirebirdAndroid
 
+# Insert your database/UDF/UDR
+
+open the .aar and put :
+database -> /databaase
+udf -> udf/
+udr -> udr/
+
 # INSTALL
 First create a new project, pour le reste de cette explication le nom de projet en minuscules sera appele YourProjectName
 
@@ -49,10 +56,10 @@ extern "C" JNIEXPORT jint JNICALL Java_com_example_PROJECTNAME_Firebird_getApiVe
 extern "C" JNIEXPORT jint JNICALL Java_com_example_firedroid_Firebird_getApiVersion(JNIEnv* env, jobject self)
 ```
 
-### Kotlin files
-First of all at the end of the first line of each file add your YourProjectName after the .
+### Firebird.kt
+First of all at the end of the first line add your YourProjectName after the .
 
-Then in Firebird.kt in init function update your YourProjectName in System.loadLibrary("ProjectName")
+Then in init function update your YourProjectName in System.loadLibrary("ProjectName")
 
 ```
 //For project name firedroid
@@ -92,11 +99,19 @@ implementation files('libs/Firebird-3.0.0-android-embedded.aar')
 
 ## Add jetpack compose
 
-Then in application tag add activity :
+**Add kotlin file**
+
+Move DebugInterface.kt file inside the java folder of your application wich can be found under **YourAndroidApplicationFolder/app/src/main/java/com/example/YourProjectName/**
+
+At the end of the first line add your YourProjectName after the .
+
+**Modify AndroidManifest.xml**
+
+In application tag add activity :
 
 ```
 <activity
-	android:name=".MainActivity"
+	android:name=".DebugInterface"
         android:exported="true"
         android:theme="@style/Theme.AppCompat">
         <intent-filter>
@@ -105,6 +120,8 @@ Then in application tag add activity :
 	</intent-filter>
 </activity>
 ```
+
+**modifiy build.graddle app**
 
 Inside the android brackets add this
 
@@ -128,5 +145,14 @@ implementation 'androidx.activity:activity-compose:1.7.2'
 ```
 
 # Use the API with your application
-## ADD to your java file
-## Add to your cpp file
+**Add to your java file**
+
+To use the api inside your java file you need to create a variable wich represent the class Firebird
+
+To construct this class you need 
+* a Context to be use to found the user's directory
+* a the database name
+* the username
+* the user's password
+
+**Add to your cpp file**
