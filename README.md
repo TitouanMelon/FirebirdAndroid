@@ -15,9 +15,19 @@ first go inside **assets/firebird_ARCHITECTURE** corresponding at your os archit
 first go inside **assets/firebird_ARCHITECTURE** corresponding at your os architecture then go to **plugins/udr** folders and put the .so libs inside
 
 # INSTALL
-First create a new project, pour le reste de cette explication le nom de projet en minuscules sera appele YourProjectName
 
-When your project is load you need to add C++ in your application (you can remove the .cpp file created by default if you just want use the api) :
+> **Note**
+> If you already have a project with C++ module you can go to **Move file** section
+
+First create a new project
+
+> **Note**
+> the name of your project in lower characters will be name YourProjectName in this readme
+
+When your project is load you need to add C++ in your application 
+
+> **Note**
+> you can remove the .cpp file created by default if you just want use the api with java not in C++
 
 * right-click on app
 * click on add C++ to module
