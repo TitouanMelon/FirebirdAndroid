@@ -2,16 +2,16 @@
 
 # Insert your database/UDF/UDR
 
-**System libs**
+**System libs** :
 Put your system libs inside the folder corresponding to the architecture of the libs inside the **jni** folder
 
-**Database**
+**Database** :
 Put your .fdb files inside the **assets/databases/**
 
-**UDF**
+**UDF** :
 first go inside **assets/firebird_ARCHITECTURE** corresponding at your os architecture then go to **UDF** folders and put the .so libs inside
 
-**UDR**
+**UDR** :
 first go inside **assets/firebird_ARCHITECTURE** corresponding at your os architecture then go to **plugins/udr** folders and put the .so libs inside
 
 # INSTALL
