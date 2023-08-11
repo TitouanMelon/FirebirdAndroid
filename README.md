@@ -119,6 +119,9 @@ in dependencies add the aar file by add this line inside brackets :
 implementation files('libs/Firebird-3.0.0-android-embedded.aar')
 ```
 
+> **Note**
+> The library code can be found in **Menbird/embedded**
+
 # ADD DEBUG INTERFACE
 
 **Add kotlin file**
